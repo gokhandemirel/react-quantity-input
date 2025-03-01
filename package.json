@@ -22,6 +22,10 @@
   ],
   "author": "Gökhan Demirel",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gokhandemirel/react-quantity-input"
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
     "@storybook/addon-essentials": "^8.5.8",
