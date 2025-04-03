@@ -1,9 +1,20 @@
-# react-quantity-input
+# React Quantity Input
 
-## Getting Started
+A simple, customizable quantity input component for React that allows users to increment/decrement numeric values.
+
+## Features
+
+- Supports increment/decrement actions
+- Fully customizable
+- Works with both numbers and strings
+- Built-in TypeScript support
+
+## Installation
 
 ```bash
 npm install react-quantity-input
+or
+yarn install react-quantity-input
 ```
 
 ## Requirements
@@ -14,27 +25,45 @@ npm install react-quantity-input
 ## Usage
 
 ```jsx
-import React from 'react';
-import { ReactQuantityInput } from 'react-quantity-input;
+import React, { useState } from 'react';
+import ReactQuantityInput from 'react-quantity-input';
 
-const Component = () => {
+const MyComponent = () => {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
+  };
+
   return (
-    <ReactQuantityInput />
+    <div>
+      <ReactQuantityInput
+        value={quantity}
+        onChange={handleQuantityChange}
+        min={1}
+        max={10}
+        step={1}
+        placeholder="Enter quantity"
+        disabled={false}
+      />
+    </div>
   );
 };
+
+export default MyComponent;
+
 ```
 
 ## Props
-- `value?` - Input value / (number|string)
-- `min?` - Min valid number / (number)
-- `max?` - Max valid number / (number)
-- `step?` - Input increase range / (number)
-- `max?` - Max valid number / (number)
-- `placeholder?` - Input placeholder / (string)
-- `maxLength?` - Input max number of characters / (number)
-- `disabled?` - Input disabled state / (boolean)
-- `isInvalid?` - Input invalid state / (boolean)
-- `onState?` - Input active state / (function)
+- `value?` - Value
+- `min?` - Minimum allowed value
+- `max?` - Maximum allowed value
+- `step?` - Increment/decrement step value
+- `placeholder?` - Placeholder text for the input
+- `maxLength?` - Max number of characters in the input
+- `disabled?` - Disable the input field
+- `isInvalid?` - Indicates if the input is in an invalid state
+- `onState?` - Callback when input is active or clicked
 
 ## LICENSE
 
